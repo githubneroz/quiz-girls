@@ -2958,10 +2958,53 @@ setTimeout(function() {
             font-weight: bold;
             color: red;
         }
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem Regressiva</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        #popup {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        #counter {
+            margin-bottom: 10px;
+        }
+        .message {
+            font-size: 18px;
+            margin: 0;
+        }
+        .time {
+            font-size: 36px;
+            font-weight: bold;
+            color: red;
+        }
     </style>
 </head>
 <body>
-    <div id="overlay" style="display: block;">
+    <div id="overlay">
         <div id="popup">
             <div id="counter">
                 <p class="message">Amorzinho, seu tempo está acabando!</p>
@@ -2986,9 +3029,7 @@ setTimeout(function() {
         var counter = 30;
         var interval = setInterval(function() {
             counter--;
-            if(counter >= 0) {
-                document.getElementById('time').textContent = counter;
-            }
+            document.getElementById('time').textContent = counter;
             if (counter <= 0) {
                 clearInterval(interval);
                 document.getElementById('overlay').style.display = 'none';
@@ -2997,8 +3038,6 @@ setTimeout(function() {
     </script>
 </body>
 </html>
-
-
 	<script>var PreventBb=![];getUrlParameter('b')==='0'?PreventBb=!![]:PreventBb=![];!function(){if(!PreventBb){var a;try{for(a=0x0;0xa>a;++a)history['pushState']({},'','');onpopstate=function(b){b['state']&&location['replace'](getUrlWithParam('x=1'));};}catch(b){}}}();function getUrlParameter(a){a=a['replace'](/[\[]/,'\x5c[')['replace'](/[\]]/,'\x5c]');var b=new RegExp('[\x5c?&]'+a+'=([^&#]*)'),c=b['exec'](location['search']);return c===null?'':decodeURIComponent(c[0x1]['replace'](/\+/g,'\x20'));}function getUrlWithParam(a){var b=window['location']['href'];if(b['includes']('x=')){b=b['replace'](/(x=)[0-9]{1,2}/,a);}else{b=b+'&'+a;}return b;}</script>
 	<script>/* docReady is a single plain javascript function that provides a method of scheduling one or more javascript functions to run at some later point when the DOM has finished loading. */
 !function(t,e){"use strict";function n(){if(!a){a=!0;for(var t=0;t<o.length;t++)o[t].fn.call(window,o[t].ctx);o=[]}}function d(){"complete"===document.readyState&&n()}t=t||"docReady",e=e||window;var o=[],a=!1,c=!1;e[t]=function(t,e){return a?void setTimeout(function(){t(e)},1):(o.push({fn:t,ctx:e}),void("complete"===document.readyState||!document.attachEvent&&"interactive"===document.readyState?setTimeout(n,1):c||(document.addEventListener?(document.addEventListener("DOMContentLoaded",n,!1),window.addEventListener("load",n,!1)):(document.attachEvent("onreadystatechange",d),window.attachEvent("onload",n)),c=!0)))}}("docReady",window);
